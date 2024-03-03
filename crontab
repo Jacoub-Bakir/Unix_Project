@@ -1,0 +1,13 @@
+# Update stops references
+0 0 * * * retrieve_stops.sh
+
+# Metro retrieve data script every 5 minutes
+*/5 * * * * retrieve_metro_next_departures.sh
+
+# Tram, Bus and rail retrieve data scripts every two hours
+0 */2 * * * retrieve_tram_next_departures.sh
+0 */2 * * * retrieve_bus_next_departures.sh
+0 */2 * * * retrieve_rail_next_departures.sh
+
+# Summarize script daily at midnight
+0 0 * * * daily_summerize.sh
